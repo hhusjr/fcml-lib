@@ -202,6 +202,7 @@ extern const fcml_cstring M_CMPXCHG8B;
 extern const fcml_cstring M_COMISD;
 extern const fcml_cstring M_COMISS;
 extern const fcml_cstring M_CPUID;
+extern const fcml_cstring M_ENDBR64;
 extern const fcml_cstring M_CQTO;
 extern const fcml_cstring M_CRC32B;
 extern const fcml_cstring M_CRC32L;

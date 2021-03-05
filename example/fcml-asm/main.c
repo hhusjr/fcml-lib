@@ -41,6 +41,8 @@ void print_error_msg(fcml_st_ceh_error_container *errors) {
     }
 }
 
+#include <fcml_common_utils.h>
+
 int main(int argc, char **argv) {
 
     fcml_ceh_error error = FCML_CEH_GEC_NO_ERROR;
@@ -196,18 +198,21 @@ int main(int argc, char **argv) {
     }
 
     context.assembler = assembler;
+    context.configuration.enable_error_messages = FCML_TRUE;
 
     fcml_st_assembler_result asm_result;
 
     fcml_fn_assembler_result_prepare(&asm_result);
 
+    //parser_result.instruction->operands[0] = fcml_fn_cu_operand_addr_offset_rel_64(100000, 64);
     error = fcml_fn_assemble(&context, parser_result.instruction, &asm_result);
     if (error) {
+        printf("Can not assemble the instruction, error: %d\n", error);
+        print_error_msg(&(parser_result.errors));
+        print_error_msg(&(asm_result.errors));
         fcml_fn_assembler_free(assembler);
         fcml_fn_parser_result_free(&parser_result);
         fcml_fn_dialect_free(dialect);
-        printf("Can not assemble the instruction, error: %d\n", error);
-        print_error_msg(&(parser_result.errors));
         exit(EXIT_FAILURE);
     }
 

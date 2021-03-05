@@ -73,11 +73,18 @@ void fcml_tf_instruction_EXTRQ(void) {
     FCML_A64( "extrq %xmm1,%xmm4", 0x66, 0x0f, 0x79, 0xe1 );
 }
 
+
+void fcml_tf_instruction_ENDBR64(void) {
+    FCML_I64( "endbr64", 0xF3, 0x0F, 0x1E, 0xFA );
+    FCML_A64( "endbr64", 0xF3, 0x0F, 0x1E, 0xFA );
+}
+
 fcml_stf_test_case fctl_ti_instructions_e[] = {
     { "fcml_tf_instruction_EMMS", fcml_tf_instruction_EMMS },
     { "fcml_tf_instruction_ENTER", fcml_tf_instruction_ENTER },
     { "fcml_tf_instruction_EXTRACTPS", fcml_tf_instruction_EXTRACTPS },
     { "fcml_tf_instruction_EXTRQ", fcml_tf_instruction_EXTRQ },
+    { "fcml_tf_instruction_ENDBR64", fcml_tf_instruction_ENDBR64 },
     FCML_STF_NULL_TEST
 };
 

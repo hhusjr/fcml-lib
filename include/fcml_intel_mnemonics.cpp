@@ -169,6 +169,7 @@ extern const fcml_cstring M_CMPXCHG8B = _FT("cmpxchg8b");
 extern const fcml_cstring M_COMISD = _FT("comisd");
 extern const fcml_cstring M_COMISS = _FT("comiss");
 extern const fcml_cstring M_CPUID = _FT("cpuid");
+extern const fcml_cstring M_ENDBR64 = _FT("endbr64");
 extern const fcml_cstring M_CQO = _FT("cqo");
 extern const fcml_cstring M_CRC32 = _FT("crc32");
 extern const fcml_cstring M_CVTDQ2PD = _FT("cvtdq2pd");

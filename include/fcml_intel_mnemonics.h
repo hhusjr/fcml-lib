@@ -170,6 +170,7 @@
 #define M_COMISD FCML_TEXT("comisd")
 #define M_COMISS FCML_TEXT("comiss")
 #define M_CPUID FCML_TEXT("cpuid")
+#define M_ENDBR64 FCML_TEXT("endbr64")
 #define M_CQO FCML_TEXT("cqo")
 #define M_CRC32 FCML_TEXT("crc32")
 #define M_CVTDQ2PD FCML_TEXT("cvtdq2pd")

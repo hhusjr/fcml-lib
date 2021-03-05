@@ -280,6 +280,7 @@ typedef enum fcml_en_instruction {
     F_CMPXCHG,
     F_CMPXCHGxB,
     F_CPUID,
+    F_ENDBR64,
     F_CRC32,
     F_CVTDQ2PD,
     F_VCVTDQ2PD,

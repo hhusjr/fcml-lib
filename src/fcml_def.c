@@ -478,7 +478,11 @@ struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_VCOMISS[] = {
 };
 
 struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_CPUID[] = {
-    {FCML_AMT_GPI, FCML_NO_DETAILS, F_NONE, MODE3264 | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xa2, 0x0}, {FCML_NA, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
+        {FCML_AMT_GPI, FCML_NO_DETAILS, F_NONE, MODE3264 | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xa2, 0x0}, {FCML_NA, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
+};
+
+struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_ENDBR64[] = {
+        {FCML_AMT_GPI, FCML_NO_DETAILS, F_F3, MODE64 | OPCODE_NUM(3) | PRIMARY_OPCODE(2), {0xf, 0x1e, 0xfa}, {FCML_NA, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
 };
 
 struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_CRC32[] = {
@@ -6564,6 +6568,7 @@ struct fcml_st_def_instruction_desc fcml_ext_instructions_def[] = {
     FCML_IA_INSTRUCTION(F_COMISS, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_COMISS),
     FCML_IA_INSTRUCTION(F_VCOMISS, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_VCOMISS),
     FCML_IA_INSTRUCTION(F_CPUID, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_CPUID),
+    FCML_IA_INSTRUCTION(F_ENDBR64, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_ENDBR64),
     FCML_IA_INSTRUCTION(F_CRC32, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_CRC32),
     FCML_IA_INSTRUCTION(F_CVTDQ2PD, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_CVTDQ2PD),
     FCML_IA_INSTRUCTION(F_VCVTDQ2PD, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_VCVTDQ2PD),
