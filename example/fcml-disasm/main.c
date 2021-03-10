@@ -791,7 +791,7 @@ int main(int argc, char **argv) {
 
     context.disassembler = disassembler;
     context.code = code;
-    context.code_length = code_length;
+    context.code_length = FCML_INSTRUCTION_SIZE;
 
     fcml_st_disassembler_result result;
 
