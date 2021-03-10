@@ -304,7 +304,7 @@ struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_BSF[] = {
 };
 
 struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_BSR[] = {
-    {FCML_AMT_GPI, FCML_NO_DETAILS, F_NONE, IS_MODRM | MODE3264 | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xbc, 0x0}, {FCML_OP_MODRM_R_W, FCML_OP_MODRM_RM_OP, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
+    {FCML_AMT_GPI, FCML_NO_DETAILS, F_NONE, IS_MODRM | MODE3264 | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xbd, 0x0}, {FCML_OP_MODRM_R_W, FCML_OP_MODRM_RM_OP, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
 };
 
 struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_BSWAP[] = {
