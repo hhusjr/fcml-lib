@@ -615,7 +615,9 @@ static void handle_segment_override(operand_encoder_args *args) {
 
     if (segment_register->type == FCML_REG_SEG) {
         if (segment_register->type == FCML_REG_SEG) {
-            if (!(args->addr_mode_def->instruction_group & FCML_AMT_BRANCH)
+            if ((!(args->addr_mode_def->instruction_group & FCML_AMT_BRANCH)
+                || (args->context->instruction->hints & FCML_HINT_INDIRECT_POINTER)
+                || (args->operand->hints & FCML_HINT_INDIRECT_POINTER))
                     && !(base->type == FCML_REG_GPR
                             && (base->reg == FCML_REG_BP
                                     || base->reg == FCML_REG_SP))) {
@@ -1988,8 +1990,9 @@ static fcml_ceh_error operand_acceptor_rm(operand_acceptor_args *args) {
 
                 if (segment_register->type == FCML_REG_SEG) {
                     /* Segment register set, so it has to be accepted.*/
-                    if (args->addr_mode_desc->instruction_group
-                            & FCML_AMT_BRANCH) {
+                    if ((args->addr_mode_desc->instruction_group
+                            & FCML_AMT_BRANCH) && !(args->operand->hints & FCML_HINT_INDIRECT_POINTER)
+                                            && !(args->context->instruction->hints & FCML_HINT_INDIRECT_POINTER)) {
                         /* For branch instructions only CS register
                          * can be used and override is not acceptable.
                          */

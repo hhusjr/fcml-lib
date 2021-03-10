@@ -875,7 +875,8 @@ static fcml_ceh_error operand_decoder_rm(decoding_context *context,
         segment_selector->segment_selector.type = FCML_REG_SEG;
         segment_selector->segment_selector.size = FCML_DS_16;
 
-        if (context->decoding_def->instruction_group & FCML_AMT_BRANCH) {
+        if ((context->decoding_def->instruction_group & FCML_AMT_BRANCH)
+            & !(context->decoding_def->hints & FCML_HINT_INDIRECT_POINTER)) {
             /* For all branches only CS segment register is used. 
              * Segment override prefixes are ignored in this case.
              */
