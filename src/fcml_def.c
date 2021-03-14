@@ -5482,8 +5482,16 @@ struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_XSAVE[] = {
     {FCML_AMT_SYSTEM, FCML_NO_DETAILS, F_W0, IS_MODRM | IS_EXT | MODE3264 | EOSA16 | EOSA32 | OPCODE_EXT(4) | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xae, 0x0}, {FCML_OP_MODRM_M_OP_512B_W, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
 };
 
+struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_XSAVEC[] = {
+        {FCML_AMT_SYSTEM, FCML_NO_DETAILS, F_W0, IS_MODRM | IS_EXT | MODE3264 | EOSA16 | EOSA32 | OPCODE_EXT(4) | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xc7, 0x0}, {FCML_OP_MODRM_M_OP_512B_W, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
+};
+
 struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_XSAVE64[] = {
-    {FCML_AMT_SYSTEM, FCML_NO_DETAILS, F_W1, IS_MODRM | IS_EXT | MODE64 | EOSA64 | OPCODE_EXT(4) | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xae, 0x0}, {FCML_OP_MODRM_M_OP_512B_W, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
+        {FCML_AMT_SYSTEM, FCML_NO_DETAILS, F_W1, IS_MODRM | IS_EXT | MODE64 | EOSA64 | OPCODE_EXT(4) | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xae, 0x0}, {FCML_OP_MODRM_M_OP_512B_W, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
+};
+
+struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_XSAVEC64[] = {
+        {FCML_AMT_SYSTEM, FCML_NO_DETAILS, F_W1, IS_MODRM | IS_EXT | MODE64 | EOSA64 | OPCODE_EXT(4) | OPCODE_NUM(2) | PRIMARY_OPCODE(1), {0xf, 0xc7, 0x0}, {FCML_OP_MODRM_M_OP_512B_W, FCML_NA, FCML_NA, FCML_NA, FCML_NA}, FCML_AM_UNKNOWN, FCML_HINT_NO_HINTS}
 };
 
 struct fcml_st_def_addr_mode_desc fcml_st_def_addr_mode_desc_XSAVEOPT[] = {
@@ -7593,6 +7601,8 @@ struct fcml_st_def_instruction_desc fcml_ext_instructions_def[] = {
     FCML_IA_INSTRUCTION(F_XSAVE64, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_XSAVE64),
     FCML_IA_INSTRUCTION(F_XSAVEOPT, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_XSAVEOPT),
     FCML_IA_INSTRUCTION(F_XSAVEOPT64, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_XSAVEOPT64),
+    FCML_IA_INSTRUCTION(F_XSAVEC, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_XSAVEC),
+    FCML_IA_INSTRUCTION(F_XSAVEC64, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_XSAVEC64),
     FCML_IA_INSTRUCTION(F_XSETBV, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_XSETBV),
     FCML_IA_INSTRUCTION(F_FEMMS, FCML_EMPTY_MNEMONIC, fcml_st_def_addr_mode_desc_FEMMS),
     FCML_IA_MULTI_INSTRUCTION(FCML_MI_AMD3DNOW, fcml_st_def_instruction_code_def_AMD3DNOW, fcml_st_def_addr_mode_desc_MI_AMD3DNOW),

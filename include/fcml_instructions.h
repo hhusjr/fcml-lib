@@ -1476,6 +1476,8 @@ typedef enum fcml_en_instruction {
     F_XRSTOR64,
     F_XSAVE,
     F_XSAVE64,
+    F_XSAVEC,
+    F_XSAVEC64,
     F_XSAVEOPT,
     F_XSAVEOPT64,
     F_XSETBV,
